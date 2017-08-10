@@ -1,0 +1,29 @@
+<h2 class="pull-left">Pages</h2>
+<form class="pull-right form-inline mt-2 mt-md-0">
+  <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" [(ngModel)]="query">
+</form>
+<div class="clearfix"></div>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>Edit</th>
+      <th>Content</th>
+      <th>Is Published ?</th>
+      <th>In nav ?</th>
+      <th>Date / Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let page of pages | pageFilters: query">
+      <td>{{page.title}}</td>
+      <td><a routerLink="/pages/{{page._id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+      <td>{{page.content.length > 10 ? page.content.slice(0,10) + '...' : page.content}}</td>
+      <td>{{page.isPublished}}</td>
+      <td>{{page.inNav}}</td>
+      <td>{{page.published | date: 'MMM dd, y hh:mm a'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
