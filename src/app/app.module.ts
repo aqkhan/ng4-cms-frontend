@@ -14,6 +14,8 @@ import { AddComponent } from './components/pages/add/add.component';
 import { EditComponent } from './components/pages/edit/edit.component';
 import { PageFiltersPipe } from './pipes/page-filters.pipe';
 
+import { CKEditorModule } from 'ng2-ckeditor';
+
 const appRoutes: Routes = [
   { path: '', component: PagesComponent },
   { path: 'pages/view', component: PagesComponent },
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    CKEditorModule
   ],
   providers: [PagesService],
   bootstrap: [AppComponent]
