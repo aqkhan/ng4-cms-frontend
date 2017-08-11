@@ -1,14 +1,11 @@
 <h1>Add Page</h1>
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Title</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter page title" name="title" [(ngModel)]="page.title">
-  </div>
-  <div class="form-group">
-    <label for="exampleTextarea">Content</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3" name="content" [(ngModel)]="page.content"></textarea>
-  </div>
-  <button class="btn btn-primary pull-left" (click)="updatePage()">Update</button>
-  <button class="btn btn-danger pull-right" (click)="deletePage()">Delete Page</button>
-  <div class="clearfix"></div>
-</form>
+<div class="form-group">
+  <label for="exampleInputEmail1">Title</label>
+  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter page title" name="title" [(ngModel)]="page.title">
+</div>
+<div class="form-group">
+  <ckeditor [(ngModel)]="page.content" [config]="{extraPlugins: 'divarea'}"></ckeditor>
+</div>
+<button class="btn btn-primary pull-left" (click)="updatePage()">Update</button>
+<button class="btn btn-danger pull-right" (click)="deletePage()">Delete Page</button>
+<div class="clearfix"></div>

@@ -10,7 +10,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class EditComponent implements OnInit {
   page: any;
   pageID: any;
+  ckeditorContent: any;
   constructor(private pageService: PagesService, private ar: ActivatedRoute, private router: Router) {
+    // this.ckeditorContent = '<p>My HTML</p>';
     this.ar.params.subscribe((params: Params) => {
       this.pageID = params['id'];
     });
